@@ -15,7 +15,7 @@ class BottomNavigationScreen extends StatefulWidget {
 }
 
 class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
-  final pages = [const FilmScreen(), const FilmCategoryScreen(), const ScheduleScreen(), const ProfileScreen()];
+  final pages = [const FilmScreen(), const FilmCategoryScreen(), const ScheduleScreen(), ProfileScreen()];
   int currentPageIndex = 0;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -26,8 +26,16 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       drawer: const Drawer(
         child: Column(
           children: [
-            UserAccountsDrawerHeader(accountName: Text('Vishal V S'), accountEmail: Text('vishal123@gmail.com'),currentAccountPicture: CircleAvatar(radius:60,backgroundImage: NetworkImage('https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3386&q=80'),)),
-            ListTile(leading: Icon(Icons.person),title: Text('My Profile'),)
+            UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color: Colors.black),
+              accountName: Text('Vishal V S'), accountEmail: Text('vishal123@gmail.com'),currentAccountPicture: CircleAvatar(radius:60,backgroundImage: AssetImage('assets/profile.jpg'),)),
+             ListTile(leading: Icon(Icons.dashboard),title: Text('DashBoard'),),
+             ListTile(leading: Icon(Icons.file_copy),title: Text('Film Schedule'),),
+             ListTile(leading: Icon(Icons.person),title: Text('Profile'),),
+             ListTile(leading: Icon(Icons.feedback),title: Text('Feedback'),),
+             ListTile(leading: Icon(Icons.logout),title: Text('Logout'),),
+             
+
           ],
         ),
       ),
