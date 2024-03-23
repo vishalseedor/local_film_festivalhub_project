@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loaclfilm_festivalhub_project/Helpers/Colors.dart/colors.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -38,6 +39,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor:appbarRightColor,
+        title: const Text('Profile',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 16)),
+        
+      ),
     
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20.0),
@@ -155,12 +162,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                  style: ElevatedButton.styleFrom(backgroundColor: appbarRightColor),
                   onPressed: _saveProfile,
                   child: const Text("Save Profile",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                 ),
                  ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                  style: ElevatedButton.styleFrom(backgroundColor: appbarRightColor),
                   onPressed: _saveProfile,
                   child: const Text("Cancel",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                 ),
